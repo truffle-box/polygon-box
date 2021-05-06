@@ -39,7 +39,18 @@ module.exports = {
       chainId: 80001
     },
     matic_mainnet: {
-
+      provider: () => new HDWalletProvider({
+        mnemonic: {
+          phrase: mnemonic
+        },
+        providerOrUrl:  `https://rpc-mainnet.maticvigil.com`,
+        chainId: 137
+      }),
+      network_id: 137,
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true,
+      chainId: 137
     },
     matic_infura_mainnet: {
       provider: () => new HDWalletProvider({
