@@ -24,35 +24,8 @@ module.exports = {
       port: 8545,            // Standard Ethereum port (default: none)
       network_id: "*",       // Any network (default: none)
     },
-    matic_testnet: {
-      provider: () => new HDWalletProvider({
-        mnemonic: {
-          phrase: mnemonic
-        },
-        providerOrUrl:  `https://rpc-mumbai.matic.today`,
-        chainId: 80001
-      }),
-      network_id: 80001,
-      confirmations: 2,
-      timeoutBlocks: 200,
-      skipDryRun: true,
-      chainId: 80001
-    },
-    matic_mainnet: {
-      provider: () => new HDWalletProvider({
-        mnemonic: {
-          phrase: mnemonic
-        },
-        providerOrUrl:  `https://rpc-mainnet.maticvigil.com`,
-        chainId: 137
-      }),
-      network_id: 137,
-      confirmations: 2,
-      timeoutBlocks: 200,
-      skipDryRun: true,
-      chainId: 137
-    },
-    matic_infura_mainnet: {
+    //matic Infura mainnet
+    mim: {
       provider: () => new HDWalletProvider({
         mnemonic: {
           phrase: mnemonic
@@ -66,7 +39,8 @@ module.exports = {
       skipDryRun: true,
       chainId: 137
     },
-    matic_infura_testnet: {
+    //matic Infura testnet
+    mit: {
       provider: () => new HDWalletProvider({
         mnemonic: {
           phrase: mnemonic
@@ -78,7 +52,39 @@ module.exports = {
       confirmations: 2,
       timeoutBlocks: 200,
       skipDryRun: true,
-      chainId: 80001
+      chainId: 80001,
+      gasPrice: 0
+    },
+    //matic testnet
+    mt: {
+      provider: () => new HDWalletProvider({
+        mnemonic: {
+          phrase: mnemonic
+        },
+        providerOrUrl:  `https://rpc-mumbai.matic.today`,
+        chainId: 80001
+      }),
+      network_id: 80001,
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true,
+      chainId: 80001,
+      gasPrice: 0
+    },
+    //matic mainnet
+    mm: {
+      provider: () => new HDWalletProvider({
+        mnemonic: {
+          phrase: mnemonic
+        },
+        providerOrUrl:  `https://rpc-mainnet.maticvigil.com`,
+        chainId: 137
+      }),
+      network_id: 137,
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true,
+      chainId: 137
     }
   },
 

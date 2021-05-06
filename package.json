@@ -8,7 +8,9 @@
   },
   "scripts": {
     "test": "truffle test",
+    "test:matic": "truffle test --config=truffle-config.matic.js --network=$npm_config_network",
     "compile:matic": "truffle compile --config=truffle-config.matic.js",
+    "migrate:matic": "truffle migrate --config=truffle-config.matic.js --network=$npm_config_network",
     "migrate:maticInfuraTestnet": "truffle migrate --network=matic_infura_testnet --config=truffle-config.matic.js",
     "migrate:maticInfuraMainnet": "truffle migrate --network=matic_infura_mainnet --config=truffle-config.matic.js",
     "migrate:maticTestnet": "truffle migrate --network=matic_testnet --config=truffle-config.matic.js",
