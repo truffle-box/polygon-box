@@ -7,6 +7,7 @@
 - [Matic PoS](#matic-pos-chain)
   * [Compiling](#compiling)
   * [Migrating](#migrating)
+  * [Paying For Migrations](#paying-for-migrations)
   * [Testing](#testing)
   * [New Configuration File](#new-configuration-file)
   * [New File Structure for Artifacts](#new-file-structure-for-artifacts)
@@ -98,9 +99,14 @@ You have several Matic L2 networks to choose from:
 
 If you would like to migrate previously migrated contracts on the same network, you can run `truffle migrate --config truffle-config.matic.js --network= (mit | mim | mt | mm)` and add the `--reset` flag.
 
-To pay for your deployments, you will need to connect a wallet to at least one of the networks above. For testing, this means you will want to connect a wallet to the `mit` or `mt` networks. We recommend using MetaMask for this purpose.
+
+### Paying for Migrations
+
+To pay for your deployments, you will need to connect a wallet to at least one of the networks above. For testing, this means you will want to connect a wallet to the `mit` or `mt` networks. We recommend using [MetaMask](https://metamask.io/).
 
 Documentation for how to set up MetaMask custom networks with Matic's testnet and mainnet can be found [here](https://docs.matic.network/docs/develop/metamask/config-matic). To set up a custom network for Infura's testnet and mainnet networks, follow the same steps but point the network to Infura's RPC endpoints (`"https://polygon-mainnet.infura.io/v3/" + infuraProjectId` and `"https://polygon-mumbai.infura.io/v3/" + infuraProjectId`). The `chainId` values are the same as those on the Matic networks.
+
+To get testnet ETH to use, visit a faucet like https://goerli-faucet.slock.it/.
 
 ### Testing
 
