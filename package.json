@@ -7,7 +7,12 @@
     "test": "test"
   },
   "scripts": {
-    "test": "truffle test"
+    "test": "truffle test",
+    "compile:matic": "truffle compile --config=truffle-config.matic.js",
+    "migrate:maticInfuraTestnet": "truffle migrate --network=matic_infura_testnet --config=truffle-config.matic.js",
+    "migrate:maticInfuraMainnet": "truffle migrate --network=matic_infura_mainnet --config=truffle-config.matic.js",
+    "migrate:maticTestnet": "truffle migrate --network=matic_testnet --config=truffle-config.matic.js",
+    "migrate:maticMainnet": "truffle migrate --network=matic_mainnet --config=truffle-config.matic.js"
   },
   "repository": {
     "type": "git",
