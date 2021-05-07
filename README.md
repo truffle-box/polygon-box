@@ -33,7 +33,7 @@ The Polygon Matic box has the following requirements:
 
 ## Installation
 
-> Note that this installation command will only work once the box is published (in the interim you can use `truffle unbox https://github.com/truffle-box/optimism-box`).
+> Note that this installation command will only work once the box is published (in the interim you can use `truffle unbox https://github.com/truffle-box/polygonMatic-box`).
 
 ```bash
 $ truffle unbox polygonMatic
