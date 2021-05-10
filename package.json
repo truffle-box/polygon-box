@@ -37,5 +37,6 @@
     "@maticnetwork/maticjs": "^2.0.40",
     "@truffle/hdwallet-provider": "^1.2.3",
     "dotenv": "^9.0.0"
-  }
+  },
+  "dependencies": {}
 }
