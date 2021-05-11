@@ -1,24 +1,20 @@
 {
-  "name": "polygonmatic-box",
+  "name": "polygon-box",
   "version": "1.0.0",
-  "description": "A sample Truffle project that allows developers to deploy to the Matic PoS chain",
+  "description": "A sample Truffle project that allows developers to deploy to the Polygon Matic PoS chain",
   "main": "truffle-config.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
     "test": "truffle test",
-    "test:matic": "truffle test --config=truffle-config.matic.js --network=$npm_config_network",
-    "compile:matic": "truffle compile --config=truffle-config.matic.js",
-    "migrate:matic": "truffle migrate --config=truffle-config.matic.js --network=$npm_config_network",
-    "migrate:maticInfuraTestnet": "truffle migrate --network=matic_infura_testnet --config=truffle-config.matic.js",
-    "migrate:maticInfuraMainnet": "truffle migrate --network=matic_infura_mainnet --config=truffle-config.matic.js",
-    "migrate:maticTestnet": "truffle migrate --network=matic_testnet --config=truffle-config.matic.js",
-    "migrate:maticMainnet": "truffle migrate --network=matic_mainnet --config=truffle-config.matic.js"
+    "test:matic": "truffle test --config=truffle-config.polygon.js --network=$npm_config_network",
+    "compile:matic": "truffle compile --config=truffle-config.polygon.js",
+    "migrate:matic": "truffle migrate --config=truffle-config.polygon.js --network=$npm_config_network",
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/truffle-box/polygonMatic-box.git"
+    "url": "git+https://github.com/truffle-box/polygon-box.git"
   },
   "keywords": [
     "Matic",
@@ -30,9 +26,9 @@
   "author": "Faina Shalts",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/truffle-box/polygonMatic-box/issues"
+    "url": "https://github.com/truffle-box/polygon-box/issues"
   },
-  "homepage": "https://github.com/truffle-box/polygonMatic-box#readme",
+  "homepage": "https://github.com/truffle-box/polygon-box#readme",
   "devDependencies": {
     "@maticnetwork/maticjs": "^2.0.40",
     "@truffle/hdwallet-provider": "^1.2.3",

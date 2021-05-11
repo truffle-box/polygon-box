@@ -52,8 +52,7 @@ module.exports = {
       confirmations: 2,
       timeoutBlocks: 200,
       skipDryRun: true,
-      chainId: 80001,
-      gasPrice: 0
+      chainId: 80001
     },
     //matic testnet
     mt: {
@@ -68,8 +67,7 @@ module.exports = {
       confirmations: 2,
       timeoutBlocks: 200,
       skipDryRun: true,
-      chainId: 80001,
-      gasPrice: 0
+      chainId: 80001
     },
     //matic mainnet
     mm: {
@@ -85,7 +83,22 @@ module.exports = {
       timeoutBlocks: 200,
       skipDryRun: true,
       chainId: 137
-    }
+    },
+    //goerli mainnet (for trying out db-kit with the sdkExample script)
+    gm: {
+      provider: () => new HDWalletProvider({
+        mnemonic: {
+          phrase: mnemonic
+        },
+        providerOrUrl:  'https://goerli.infura.io/v3/' + infuraProjectId,
+        chainId: 5
+      }),
+      network_id: 5,
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true,
+      chainId: 5
+    },
   },
 
   // Set default mocha options here, use special reporters etc.

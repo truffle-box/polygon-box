@@ -28,12 +28,12 @@ module.exports = {  /**
 
   * contracts_build_directory tells Truffle where to store compiled contracts
   */
-  contracts_build_directory: './build/evm-contracts',
+  contracts_build_directory: './build/ethereum-contracts',
 
   /**
   * contracts_directory tells Truffle where the contracts you want to compile are located
   */
-  contracts_directory: './contracts/evm',
+  contracts_directory: './contracts/ethereum',
 
   /**
    * Networks define how you connect to your ethereum client and let you set the
