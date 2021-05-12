@@ -8,9 +8,9 @@
   },
   "scripts": {
     "test": "truffle test",
-    "test:matic": "truffle test --config=truffle-config.polygon.js --network=$npm_config_network",
-    "compile:matic": "truffle compile --config=truffle-config.polygon.js",
-    "migrate:matic": "truffle migrate --config=truffle-config.polygon.js --network=$npm_config_network"
+    "test:polygon": "truffle test --config=truffle-config.polygon.js --network=$npm_config_network",
+    "compile:polygon": "truffle compile --config=truffle-config.polygon.js",
+    "migrate:polygon": "truffle migrate --config=truffle-config.polygon.js --network=$npm_config_network"
   },
   "repository": {
     "type": "git",

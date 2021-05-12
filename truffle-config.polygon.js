@@ -10,12 +10,12 @@ module.exports = {
   /**
   * contracts_build_directory tells Truffle where to store compiled contracts
   */
-  contracts_build_directory: './build/matic-contracts',
+  contracts_build_directory: './build/polygon-contracts',
 
   /**
   * contracts_directory tells Truffle where the contracts you want to compile are located
   */
-  contracts_directory: './contracts/matic',
+  contracts_directory: './contracts/polygon',
 
 
   networks: {
@@ -24,8 +24,8 @@ module.exports = {
       port: 8545,            // Standard Ethereum port (default: none)
       network_id: "*",       // Any network (default: none)
     },
-    //matic Infura mainnet
-    mim: {
+    //polygon Infura mainnet
+    polygon_infura_mainnet: {
       provider: () => new HDWalletProvider({
         mnemonic: {
           phrase: mnemonic
@@ -39,8 +39,8 @@ module.exports = {
       skipDryRun: true,
       chainId: 137
     },
-    //matic Infura testnet
-    mit: {
+    //polygon Infura testnet
+    polygon_infura_testnet: {
       provider: () => new HDWalletProvider({
         mnemonic: {
           phrase: mnemonic
@@ -54,8 +54,8 @@ module.exports = {
       skipDryRun: true,
       chainId: 80001
     },
-    //matic testnet
-    mt: {
+    //polygon testnet
+    polygon_testnet: {
       provider: () => new HDWalletProvider({
         mnemonic: {
           phrase: mnemonic
@@ -69,8 +69,8 @@ module.exports = {
       skipDryRun: true,
       chainId: 80001
     },
-    //matic mainnet
-    mm: {
+    //polygon mainnet
+    polygon_mainnet: {
       provider: () => new HDWalletProvider({
         mnemonic: {
           phrase: mnemonic
@@ -83,22 +83,7 @@ module.exports = {
       timeoutBlocks: 200,
       skipDryRun: true,
       chainId: 137
-    },
-    //goerli mainnet (for trying out db-kit with the sdkExample script)
-    gm: {
-      provider: () => new HDWalletProvider({
-        mnemonic: {
-          phrase: mnemonic
-        },
-        providerOrUrl:  'https://goerli.infura.io/v3/' + infuraProjectId,
-        chainId: 5
-      }),
-      network_id: 5,
-      confirmations: 2,
-      timeoutBlocks: 200,
-      skipDryRun: true,
-      chainId: 5
-    },
+    }
   },
 
   // Set default mocha options here, use special reporters etc.
