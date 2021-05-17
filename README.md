@@ -152,4 +152,4 @@ The information above should allow you to deploy to the Polygon PoS Layer 2 chai
 
 ## Support
 
-Support for this box is available via the Truffle community available [here](https://www.trufflesuite.com/community).
+Support for this box is available via the Truffle community [here](https://www.trufflesuite.com/community).
