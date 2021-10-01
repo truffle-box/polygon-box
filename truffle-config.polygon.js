@@ -53,36 +53,6 @@ module.exports = {
       timeoutBlocks: 200,
       skipDryRun: true,
       chainId: 80001
-    },
-    //polygon testnet
-    polygon_testnet: {
-      provider: () => new HDWalletProvider({
-        mnemonic: {
-          phrase: mnemonic
-        },
-        providerOrUrl:  `https://rpc-mumbai.matic.today`,
-        chainId: 80001
-      }),
-      network_id: 80001,
-      confirmations: 2,
-      timeoutBlocks: 200,
-      skipDryRun: true,
-      chainId: 80001
-    },
-    //polygon mainnet
-    polygon_mainnet: {
-      provider: () => new HDWalletProvider({
-        mnemonic: {
-          phrase: mnemonic
-        },
-        providerOrUrl:  `https://rpc-mainnet.maticvigil.com`,
-        chainId: 137
-      }),
-      network_id: 137,
-      confirmations: 2,
-      timeoutBlocks: 200,
-      skipDryRun: true,
-      chainId: 137
     }
   },
 
