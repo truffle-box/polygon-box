@@ -3,20 +3,19 @@
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Setup](#setup)
-  * [Using the .env File](#using-the-env-file)
-  * [New Configuration File](#new-configuration-file)
-  * [New Directory Structure for Artifacts](#new-directory-structure-for-artifacts)
+  - [Using the .env File](#using-the-env-file)
+  - [New Configuration File](#new-configuration-file)
+  - [New Directory Structure for Artifacts](#new-directory-structure-for-artifacts)
 - [Polygon PoS Chain](#polygon-pos-chain)
-  * [Compiling](#compiling)
-  * [Migrating](#migrating)
-  * [Paying For Migrations](#paying-for-migrations)
-  * [Basic Commands](#basic-commands)
-  * [Testing](#testing)
-  * [Communication Between Ethereum and Polygon PoS Chains](#communication-between-ethereum-and-polygon-pos-chains)
+  - [Compiling](#compiling)
+  - [Migrating](#migrating)
+  - [Paying For Migrations](#paying-for-migrations)
+  - [Basic Commands](#basic-commands)
+  - [Testing](#testing)
+  - [Communication Between Ethereum and Polygon PoS Chains](#communication-between-ethereum-and-polygon-pos-chains)
 - [Support](#support)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
 
 This Truffle Polygon box provides you with the boilerplate structure necessary to start coding for Polygon's Ethereum L2 solution, the Polygon PoS chain (previously called the Matic PoS chain). For detailed information on how the Polygon PoS chain works, please see their documentation [here](https://docs.matic.network/docs/develop/getting-started).
 
@@ -35,6 +34,7 @@ The Polygon box has the following requirements:
 - Windows, Linux or MacOS
 
 Helpful, but optional:
+
 - An [Infura](https://infura.io/) account and Project ID
 - A [MetaMask](https://metamask.io/) account
 
@@ -54,16 +54,16 @@ The `.env` file is ignored by git in this project, to help protect your private 
 
 If you are unfamiliar with using `.env` for managing your mnemonics and other keys, the basic steps for doing so are below:
 
-1) Use `touch .env` in the command line to create a `.env` file at the root of your project.
-2) Open the `.env` file in your preferred IDE
-3) Add the following, filling in your own mnemonic and Infura project key:
+1. Use `touch .env` in the command line to create a `.env` file at the root of your project.
+2. Open the `.env` file in your preferred IDE
+3. Add the following, filling in your own mnemonic and Infura project key:
 
 ```
 MNEMONIC="<Your Mnemonic>"
 INFURA_PROJECT_ID="<Your Infura Project ID>"
 ```
 
-4) As you develop your project, you can put any other sensitive information in this file. You can access it from other files with `require('dotenv').config()` and refer to the variable you need with `process.env['<YOUR_VARIABLE>']`.
+4. As you develop your project, you can put any other sensitive information in this file. You can access it from other files with `require('dotenv').config()` and refer to the variable you need with `process.env['<YOUR_VARIABLE>']`.
 
 ### New Configuration File
 
@@ -92,33 +92,26 @@ If you would like to recompile previously compiled contracts, you can manually r
 
 ### Migrating
 
-To migrate on the Polygon PoS network, run `npm run migrate:polygon --network=(polygon_infura_testnet | polygon_infura_mainnet | polygon_testnet | polygon_mainnet)` (remember to choose a network from these options!).
+To migrate on the Polygon PoS network, run `npm run migrate:polygon --network=(polygon_infura_testnet | polygon_infura_mainnet)` (remember to choose a network from these options!).
 
 As you can see, you have several Polygon PoS L2 networks to choose from:
 
-1) *Infura networks*. Infura is running a testnet node as well as a mainnet node for the Polygon PoS chain. Deployment to these networks requires that you sign up for an Infura account and initiate a project. See the Infura website for [details](https://infura.io/). In the example network configuration, we expect you to have a public Infura project key, which you should indicate in your `.env` file. The following Infura networks are indicated in the `truffle-config.polygon.js` file:
+_Infura networks_. Infura is running a testnet node as well as a mainnet node for the Polygon PoS chain. Deployment to these networks requires that you sign up for an Infura account and initiate a project. See the Infura website for [details](https://infura.io/). In the example network configuration, we expect you to have a public Infura project key, which you should indicate in your `.env` file. The following Infura networks are indicated in the `truffle-config.polygon.js` file:
 
-  - `polygon_infura_testnet`: This is the Infura Polygon PoS testnet.
-  - `polygon_infura_mainnet`: This is the Infura Polygon PoS mainnet. Caution! If you deploy to this network using a connected wallet, the fees are charged in mainnet ETH.
+- `polygon_infura_testnet`: This is the Infura Polygon PoS testnet.
+- `polygon_infura_mainnet`: This is the Infura Polygon PoS mainnet. Caution! If you deploy to this network using a connected wallet, the fees are charged in mainnet ETH.
 
-2) *Polygon networks* Polygon has provided RPC endpoints for testing and mainnet deployments.
-
-  - `polygon_testnet`: This is the Polygon PoS testnet, called "Mumbai". It is goerli-based.
-  - `polygon_mainnet`: This is the Polygon PoS mainnet. Caution! Deployment requires mainnet ETH.   
-
-
-If you would like to migrate previously migrated contracts on the same network, you can run `truffle migrate --config truffle-config.polygon.js --network= (polygon_infura_testnet | polygon_infura_mainnet | polygon_testnet | polygon_mainnet)` and add the `--reset` flag.
-
+If you would like to migrate previously migrated contracts on the same network, you can run `truffle migrate --config truffle-config.polygon.js --network= (polygon_infura_testnet | polygon_infura_mainnet)` and add the `--reset` flag.
 
 ### Paying for Migrations
 
-To pay for your deployments, you will need to have an account with ETH available to spend. You will need your mnemomic phrase (saved in the `.env` file or through some other secure method). The first account generated by the seed needs to have the ETH you need to deploy.  For reference, the Polygon PoS testnets are based in goerli, so you should be able to use goerli ETH.
+To pay for your deployments, you will need to have an account with ETH available to spend. You will need your mnemomic phrase (saved in the `.env` file or through some other secure method). The first account generated by the seed needs to have the ETH you need to deploy. For reference, the Polygon PoS testnets are based in goerli, so you should be able to use goerli ETH.
 
-If you do not have a wallet with funds to deploy, you will need to connect a wallet to at least one of the networks above. For testing, this means you will want to connect a wallet to the `polygon_infura_testnet` or `polygon_testnet` networks. We recommend using [MetaMask](https://metamask.io/).
+If you do not have a wallet with funds to deploy, you will need to connect a wallet to at least one of the networks above. For testing, this means you will want to connect a wallet to the `polygon_infura_testnet` network. We recommend using [MetaMask](https://metamask.io/).
 
-Documentation for how to set up MetaMask custom networks with the Polygon PoS testnet and mainnet can be found [here](https://docs.matic.network/docs/develop/metamask/config-matic).
+Documentation for how to set up MetaMask custom networks with the Polygon PoS network can be found [here](https://docs.matic.network/docs/develop/metamask/config-matic).
 
-To set up a custom network for Infura's testnet and mainnet networks, follow the same steps but point the network to Infura's RPC endpoints (`"https://polygon-mainnet.infura.io/v3/" + infuraProjectId` and `"https://polygon-mumbai.infura.io/v3/" + infuraProjectId`). The `chainId` values are the same as those on the Polygon networks.
+Follow the steps in the documentation above using Infura's RPC endpoints (`"https://polygon-mainnet.infura.io/v3/" + infuraProjectId` and `"https://polygon-mumbai.infura.io/v3/" + infuraProjectId`). The `chainId` values are the same as those in the `truffle-config.polygon.js` networks entries.
 
 To get testnet ETH to use, visit a faucet like https://goerli-faucet.slock.it/.
 
@@ -126,25 +119,27 @@ To get testnet ETH to use, visit a faucet like https://goerli-faucet.slock.it/.
 
 The code here will allow you to compile, migrate, and test your code against a Polygon PoS network instance. The following commands can be run (more details on each can be found in the next section):
 
- To compile:
- ```
- npm run compile:polygon
- ```
+To compile:
 
- To migrate:
- ```
- npm run migrate:polygon --network=(polygon_infura_testnet | polygon_infura_mainnet | polygon_testnet | polygon_mainnet)
- ```
+```
+npm run compile:polygon
+```
 
- To test:
- ```
- npm run test:polygon --network=(polygon_infura_testnet | polygon_infura_mainnet | polygon_testnet | polygon_mainnet)
- ```
+To migrate:
 
+```
+npm run migrate:polygon --network=(polygon_infura_testnet | polygon_infura_mainnet)
+```
+
+To test:
+
+```
+npm run test:polygon --network=(polygon_infura_testnet | polygon_infura_mainnet)
+```
 
 ### Testing
 
-In order to run the test currently in the boilerplate, use the following command: `npm run test:polygon --network=(polygon_infura_testnet | polygon_infura_mainnet | polygon_testnet | polygon_mainnet)` (remember to choose a network!). The current test file just has some boilerplate tests to get you started. You will likely want to add network-specific tests to ensure your contracts are behaving as expected.
+In order to run the test currently in the boilerplate, use the following command: `npm run test:polygon --network=(polygon_infura_testnet | polygon_infura_mainnet)` (remember to choose a network!). The current test file just has some boilerplate tests to get you started. You will likely want to add network-specific tests to ensure your contracts are behaving as expected.
 
 ### Communication Between Ethereum and Polygon PoS Chains
 
