@@ -99,7 +99,7 @@ As you can see, you have several Polygon PoS L2 networks to choose from:
 _Infura networks_. Infura is running a testnet node as well as a mainnet node for the Polygon PoS chain. Deployment to these networks requires that you sign up for an Infura account and initiate a project. See the Infura website for [details](https://infura.io/). In the example network configuration, we expect you to have a public Infura project key, which you should indicate in your `.env` file. The following Infura networks are indicated in the `truffle-config.polygon.js` file:
 
 - `polygon_infura_testnet`: This is the Infura Polygon PoS testnet.
-- `polygon_infura_mainnet`: This is the Infura Polygon PoS mainnet. Caution! If you deploy to this network using a connected wallet, the fees are charged in mainnet ETH.
+- `polygon_infura_mainnet`: This is the Infura Polygon PoS mainnet. Caution! If you deploy to this network using a connected wallet, the fees are charged in mainnet MATIC.
 
 If you would like to migrate previously migrated contracts on the same network, you can run `truffle migrate --config truffle-config.polygon.js --network= (polygon_infura_testnet | polygon_infura_mainnet)` and add the `--reset` flag.
 
